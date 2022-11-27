@@ -66,6 +66,23 @@ nav {
 .nav-item{
     margin: 0 10px;
 }
+.navbar-brand-end{
+	width: 40px;
+	height: 40px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+border: 1px black solid;
+border-radius: 35px;
+margin-right: 20px;
+}
+.navbar-brand-end:hover{
+	transition: 1s;
+
+	transform: rotate(360deg);
+
+}
 .features{
     margin-top: 15px;
 }
@@ -141,4 +158,39 @@ footer{
     flex: row;
     justify-content: space-between;
     align-items: center;
+}
+#indra-img{
+	width:200px;
+	height:250px;
+	background-image: url('../assets/indra.jpg');
+	background-size: cover;
+	background-position: 30%;
+}
+#karan-img{
+	width:200px;
+	height:250px;
+	background-image: url('../assets/karan-small.png');
+	background-size: cover;
+	background-position: 30%;
+}
+#vaibhav-img{
+	width:200px;
+	height:250px;
+	background-image: url('../assets/vaibhav.png');
+	background-size: cover;
+	background-position: 30%;
+}
+#ashutosh-img{
+	width:200px;
+	height:250px;
+	background-image: url('../assets/ashu.jpg');
+	background-size: cover;
+	background-position: 30%;
+}
+#tarun-img{
+	width:200px;
+	height:250px;
+	background-image: url('../assets/tarun.jpg');
+	background-size: cover;
+	background-position: 30%;
 }
