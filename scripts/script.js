@@ -6,7 +6,35 @@ var extractedText = "";
 var dropareaPrimaryText = document.querySelector('#primary-text');
 var dropareaSecondaryText = document.querySelector('#secondary-text');
 let browseBtn = document.querySelector(".browseBtn");
+let downloadBtn = document.querySelector(".downloadBtn");
 let browseInput = document.querySelector("input")
+let virtualClipboard = document.querySelector("#virtual-clipboard");
+
+
+// To Copy the Content
+let copybtn = document.querySelector("#copyBtn");
+
+copybtn.addEventListener("click", function (event) {
+
+    copied();
+
+    let virtualClipboard = document.querySelector(".modal-body");
+    virtualClipboard.focus();
+    virtualClipboard.select();
+    document.execCommand("copy");
+    copied();
+});
+
+// To Download
+
+downloadBtn.addEventListener("click",()=>{
+    const blob=new Blob([modalBody.value],{type:"text/plain"});
+    const fileUrl = URL.createObjectURL(blob);
+    const link=document.createElement("a");
+    link.download="output-Text";
+    link.href=fileUrl;
+    link.click();
+})
 
 // On Browse
 
@@ -53,7 +81,7 @@ droparea.addEventListener("drop", (event) => {
 function checkFile(thisFile) {
     let fileType = thisFile.type;
     let validExtensions = ['image/jpeg', 'image/jpg', 'image/png'];
-
+console.log(fileType);
 
 
     if (validExtensions.includes(fileType)) {
@@ -88,13 +116,14 @@ function extractText(imgLocation) {
 
         extractedText = text;
         openConversionWindow(extractedText);
+
         console.log(extractedText);
     })
 }
 
 function openConversionWindow(element) {
     if (element.length > 0) {
-        modalBody.textContent = element;
+        modalBody.value = element;
         conversionWindow.toggle();
         dropareaPrimaryText.style.display = 'flex';
         dropareaSecondaryText.style.display = 'none';
@@ -110,15 +139,27 @@ function onDropStyles() {
 }
 function oninvalidStyles() {
     droparea.classList.add("main-input-invalid");
+    dropareaPrimaryText.style.display = 'flex';
+    dropareaSecondaryText.style.display = 'none';
     setInterval(() => {
         droparea.classList.remove("main-input-hover");
         droparea.classList.remove("main-input-invalid");
-
+        
     }, 1000);
 
     dropText.textContent = 'Drag & Drop';
 
-    dropareaPrimaryText.style.display = 'flex';
-    dropareaSecondaryText.style.display = 'none';
+   
 }
 
+function copied() {
+    let copybtn = document.querySelector('.copybox');
+    copybtn.style.transition = '1s';
+    copybtn.style.opacity = 1;
+
+
+    setInterval(() => {
+        copybtn.style.opacity = 0;
+    }, 2500);
+
+}

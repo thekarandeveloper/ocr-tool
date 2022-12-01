@@ -26,6 +26,7 @@
 		></script>
 		<script src="https://unpkg.com/tesseract.js@v2.0.2/dist/tesseract.min.js"></script>
 		<script src="../scripts/script.js" defer></script>
+
 		<!-- Favicons -->
 		<link rel="apple-touch-icon" href="./assets/gu-logo.png" sizes="180x180" />
 		<link
@@ -101,7 +102,7 @@
 				<div id="primary-text">
 					<div id="dragText">Drag & Drop</div>
 					<span class="browseBtn">or Browse</span>
-					<input class="input" type="file" hidden>
+					<input class="input" type="file" hidden />
 					<div class="desc">Only Supports JPG, PNG, JPEG</div>
 				</div>
 				<div id="secondary-text">
@@ -109,7 +110,6 @@
 					<br />
 					<p>Extracting Text From your File</p>
 				</div>
-				
 			</div>
 			<!-- ******************************************************* -->
 		</section>
@@ -133,24 +133,32 @@
 								aria-label="Close"
 							></button>
 						</div>
-						<div class="modal-body">asas</div>
+						<textarea class="modal-body" user-select="false"></textarea>
 						<div class="modal-footer">
 							<button
 								type="button"
+								id="copyBtn"
 								class="btn copyBtn btn-secondary"
 								data-bs-dismiss="modal"
 							>
 								Copy
 							</button>
-							<button type="button" class="btn btn-primary">
-								Save changes
+							
+
+							<button type="button" class="btn downloadBtn btn-primary">
+								Download File <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M2 16C1.45 16 0.979333 15.8043 0.588 15.413C0.196 15.021 0 14.55 0 14V11H2V14H14V11H16V14C16 14.55 15.8043 15.021 15.413 15.413C15.021 15.8043 14.55 16 14 16H2ZM8 12L3 7L4.4 5.55L7 8.15V0H9V8.15L11.6 5.55L13 7L8 12Z" fill="white"/>
+									</svg>
+									
 							</button>
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
-
+<section id="notification">
+<div class=" btn btn-success copybox">Text Copied</div>
+</section>
 		<section id="info" class="container-fluid bg-black">
 			<div class="container">
 				<h2 class="">How this amazing technology works ?</h2>
@@ -212,5 +220,6 @@
 				&copy; 2022–2023 Karan Kumar, A Galgotia's University Student &middot;
 			</p>
 		</footer>
+		
 	</body>
 </html>
