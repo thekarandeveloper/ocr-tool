@@ -99,7 +99,6 @@ console.log(fileType);
     }
 
     else {
-        droparea.classList.remove("main-input-hover")
         window.alert('This file is not an image, Please Try some other file.');
 
         oninvalidStyles();
